@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02指令</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <p>这是双大括号插值：{{msg}}</p> -->
+        <!-- <p>这是v-html插值：<span v-html="msg"></span></p> -->
+        <p>{{age<18?"未成年":"成年"}}</p>
+        <div v-if="age<18">如果age < 18,这里的内容就会显示</div>
+        <div v-else>如果age >= 18,这里的内容就会显示</div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+
+        Vue.createApp({
+            data(){
+                return{
+                    //msg:"<b>Hello world!!!</b>",
+                    //xx:"<script>alert(1)<\/scrip0t>"
+                    age:18
+                }
+            }
+        }).mount("#app")
+
+
+    </script>
+</body>
+</html>

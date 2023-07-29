@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>认识vue</title>
+    <style>
+        *{ margin: 0; padding: 0; font-family: "Microsoft YaHei","serif";}
+    </style>
+</head>
+<body>
+    <div id="goudan">
+<!-- 最基础的使用vue数据的方式 -- 双大括号插值 -->
+    {{ y }}
+    <p>{{name}}今年{{age}}岁，是个可爱的{{sex}}生</p>
+    <p>{{2+3}}</p><br>
+    <p>{{age<18?"未成年":"成年"}}</p>
+    </div>
+    <!-- 要联网 -->
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+
+        //配置
+        const option = {
+            //数据
+            //data:function(){}
+            data() {
+                //返回的这个对象的属性，就是对应着数据
+                return {
+                    y:"Hello Vue!",
+                    name:"阿飞",
+                    age:18,
+                    sex:"男"
+
+                }
+
+            }
+        }
+
+        //通过调用对象的createApp()方法就可以创建一个vue的实例
+        //创建应用并找到DOM
+        //用vm接收Vue创建的实例
+        let vm = Vue.createApp(option).mount("#goudan");
+
+         
+
+    </script>
+</body>
+</html>
